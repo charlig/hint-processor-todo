@@ -4,7 +4,7 @@
 <h1>Todos</h1>
 <ul>
     <li th:each="todo : ${todos}"
-        th:text="'id: ' + ${todo.id} + ', activity: ' + ${todo.todo} + ', completed:' + ${todo.completed} + ', user:' + ${todo.user.id}"></li>
+        th:text="'id: ' + ${todo.id} + ', activity: ' + ${todo.todo} + ', completed:' + ${todo.completed} + ', user:' + ${todo.user}"></li>
 </ul>
 </body>
 </html>

@@ -18,6 +18,7 @@ public class Todo {
     private @Id Long id;
     private String todo;
     private Boolean completed;
-    private String userId;
+    @Column(name = "user_id")
+    private String user;
 
 }
