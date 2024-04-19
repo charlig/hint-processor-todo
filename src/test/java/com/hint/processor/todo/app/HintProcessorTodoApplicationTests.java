@@ -26,7 +26,6 @@ class HintProcessorTodoApplicationTests {
 	void todoHtmlList() {
 		ResponseEntity<String> result = restTemplate.exchange(RequestEntity.get("/list").build(), String.class);
 		assertThat(result.getStatusCode()).isEqualTo(HttpStatus.OK);
-		System.out.println(result.getBody());
 		assertThat(result.getBody()).contains("David", "Mark", "Clark", "Peter");
 	}
 

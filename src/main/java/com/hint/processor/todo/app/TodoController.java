@@ -20,9 +20,6 @@ public class TodoController {
     public String findAll(Model model) {
         List<TodoDto> todos = todoRepository.findAll().stream()
                 .map(t -> new TodoDto(t.getId(), t.getTodo(),t.getCompleted(),  new UserDto(t.getUserId()))).toList();
-        System.out.println("_______");
-        System.out.println(todos.stream().findFirst().get().user().id());
-        todos.stream().forEach(System.out::println);
         model.addAttribute("todos", todos);
         return "todo-list.html";
     }
