@@ -19,7 +19,8 @@ public class TodoController {
     @GetMapping("/list")
     public String findAll(Model model) {
         List<TodoDto> todos = todoRepository.findAll().stream()
-                .map(t -> new TodoDto(t.getId(), t.getTodo(),t.getCompleted(),  new UserDto(t.getUserId()))).toList();
+                .map(t -> new TodoDto(t.getId(), t.getTodo(),t.getCompleted(),  new UserDto(t.getUser()))).toList();
+//        List<Todo> todos = todoRepository.findAll();
         model.addAttribute("todos", todos);
         return "todo-list.html";
     }

@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.core.annotation.AliasFor;
 
 @Entity
 @Table(name = "todo_details")
@@ -18,6 +19,7 @@ public class Todo {
     private @Id Long id;
     private String todo;
     private Boolean completed;
-    private String userId;
+    @Column(name = "user_id")
+    private String user;
 
 }
